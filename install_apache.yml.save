@@ -1,0 +1,13 @@
+f---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache and php packages for Debian or RHEL distros
+    package:
+      name: 
+        - "{{ apache_package}}"
+        - "{{ php_package }}"
+      state: latest
+      update_cache: yes
